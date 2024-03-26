@@ -1,21 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="estilo.css">
-
-    <title>Lyrics & Music API</title>
+    <title>Pesquisador de Versículo Bíblico</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
-    <h1>Lyrics & Music API</h1>
-    <form id="formPesquisa">
-        <input type="text" id="query" placeholder="Digite sua consulta...">
-        <button type="submit">Pesquisar</button>
-    </form>
-    
-    <div id="results"></div>
+    <div class="container d-flex justify-content-center align-items-center h-100">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title text-center mb-4">Pesquisador de Versículo Bíblico</h1>
+                <form id="bibleForm">
+                    <div class="form-group">
+                        <label for="livro">Livro:</label>
+                        <input type="text" id="livro" name="livro" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="capitulo">Capítulo:</label>
+                        <input type="number" id="capitulo" name="capitulo" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="versiculo">Versículo:</label>
+                        <input type="number" id="versiculo" name="versiculo" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="traducao">Tradução:</label>
+                        <select id="traducao" name="traducao" class="form-control">
+                            <option value="almeida" selected>João Ferreira de Almeida</option>
+                            <option value="web">World English Bible</option>
+                            <option value="kjv">King James Version</option>
+                            <option value="asv">American Standard Version (1901)</option>
+                            <!-- Adicione mais traduções aqui, se necessário -->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">PROCURAR VERSÍCULO</button>
+                </form>
+                <div id="verseContainer" class="mt-4"></div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
